@@ -10,6 +10,6 @@ textStream.on('readable', readFile)
 function readFile() {
   let textFile = textStream.read();
   if(textFile != null) {
-    stdout.write(chalk.green(textFile));
+    stdout.write('\n' + chalk.blue(textFile)+ '\n');
   }
 }
