@@ -5,6 +5,9 @@ const { stdout } = require('process');
 const chalk = require('chalk');
 
 fs.readdir(secretFolder, (err, files) => {
+
+  if (err) throw err;
+
   stdout.write( '\n');
 
   files.forEach(file => {
@@ -17,7 +20,7 @@ fs.readdir(secretFolder, (err, files) => {
   
       stdout.write(chalk.blue(fileName) + ' - ' + (chalk.cyan(fileExtension) + ' - ' + (chalk.green(fileSize)) + '\n'));
       }
-  });
+  })
   
   stdout.write( '\n')
-});
+})
