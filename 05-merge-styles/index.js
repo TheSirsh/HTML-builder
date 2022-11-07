@@ -17,17 +17,17 @@ function bundleFiles() {
     files.forEach(file => {
       if (path.extname(file) === '.css') {
         fs.readFile(path.join(__dirname, 'styles', file), (err, file) => {
-            if (err) throw err;
+          if (err) throw err;
 
-            fs.open(resultStylesFile, 'w', err => {
-                if (err) throw err;
-              }
-            )
-
-            fs.appendFile(resultStylesFile, file, err => {
-                if (err) throw err;
-              })
+          fs.open(resultStylesFile, 'w', err => {
+              if (err) throw err;
           })
+
+          fs.appendFile(resultStylesFile, file, err => {
+              if (err) throw err;
+          })
+
+        })
       }
     })
   })
